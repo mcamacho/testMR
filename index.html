@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Browserify Test</title>
+    </head>
+    <body>
+        <ul id="item-list"></ul>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="./js/bundle.js"></script>
+        <script type="text/javascript">
+            (function (global) {
+                var ListScope = require("ListScope"),
+                  newlist = new ListScope("#item-list"),
+                  conf = {
+                      ltag: 'li',
+                      lclass: 'item',
+                      larray: ["uno", "dos", "cinco", "uno", "dos", "cinco"]
+                  };
+                newlist.init(conf);
+            }(this));
+        </script>
+    </body>
+</html>
